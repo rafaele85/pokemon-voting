@@ -33,12 +33,14 @@ export const Voting = () => {
             <Compare>
                 <Member>
                     <Sprite src={firstPokemon?.data?.sprites?.front_default || ''} />
+                    <Nickname>{firstPokemon?.data?.nickname}</Nickname>
                 </Member>
                 <Vs>
                     Vs
                 </Vs>
                 <Member>
                     <Sprite src={secondPokemon?.data?.sprites?.front_default || ''} />
+                    <Nickname>{secondPokemon?.data?.nickname}</Nickname>
                 </Member>
 
             </Compare>
@@ -63,12 +65,14 @@ const Compare = styled.div`
 `
 const Member = styled.div`
   display: flex;
+  flex-direction: column;
   background-color: mistyrose;
   color: black;
   width: 160px;
   height: 160px;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 `
 const Vs = styled.div`
   display: flex;
@@ -79,4 +83,9 @@ const Vs = styled.div`
 `
 const Sprite = styled.img`
   width: 100%;
+`
+
+const Nickname = styled.div`
+  text-align: center;
+  font-weight: bold;
 `

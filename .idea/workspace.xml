@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3249ef2f-6894-4213-99ba-6ca52afbaa5d" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/utils/getOptionsForVote.ts" afterDir="false" />
+    <list default="true" id="3249ef2f-6894-4213-99ba-6ca52afbaa5d" name="Changes" comment="added retrieval of pokemon by id and show pokemon image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/router.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Voting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Voting.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657468973507</updated>
-      <workItem from="1657468974709" duration="11415000" />
+      <workItem from="1657468974709" duration="12383000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1657502159405</created>
@@ -67,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657502178751</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added retrieval of pokemon by id and show pokemon image">
+      <created>1657522450224</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657522450224</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,6 +88,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="added retrieval of pokemon by id and show pokemon image" />
+    <option name="LAST_COMMIT_MESSAGE" value="added retrieval of pokemon by id and show pokemon image" />
   </component>
 </project>

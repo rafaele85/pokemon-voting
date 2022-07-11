@@ -11,12 +11,12 @@ type InputDefType = typeof inputSchema
 
 type ParamType = { input: z.infer<InputDefType> }
 
-const resolve = (params: ParamType) => {
+const resolve = async (params: ParamType) => {
     const api = new PokemonClient()
 
-    const pokemon = api.getPokemonById(params.input.id)
+    const pokemon = await api.getPokemonById(params.input.id)
 
-    return pokemon
+    return {nickname: pokemon.name, sprites: pokemon.sprites}
 }
 
 const params = {
