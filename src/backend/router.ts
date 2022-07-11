@@ -1,6 +1,7 @@
 import * as trpc from '@trpc/server';
 import {z} from "zod";
 import {PokemonClient} from "pokenode-ts";
+import {Pokemon} from "../types/pokemon";
 
 const resource = 'get-pokemon-by-id'
 
@@ -14,9 +15,10 @@ type ParamType = { input: z.infer<InputDefType> }
 const resolve = async (params: ParamType) => {
     const api = new PokemonClient()
 
-    const pokemon = await api.getPokemonById(params.input.id)
+    const res = await api.getPokemonById(params.input.id)
 
-    return {nickname: pokemon.name, sprites: pokemon.sprites}
+    const pokemon: Pokemon = {nickname: res.name, sprite: res.sprites?.front_default || undefined, id: res.id}
+    return pokemon
 }
 
 const params = {

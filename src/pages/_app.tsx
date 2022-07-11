@@ -7,13 +7,20 @@ const MyAppInternal = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />
 }
 
-const url = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}/api/trpc`
-    : 'http://localhost:3000/api/trpc';
+const getBaseUrl = () => {
+  if (process.browser) {
+    return ''
+  }
+  return process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000';
+}
 
+const url = getBaseUrl() + '/api/trpc'
 type ConfigParams = { ctx?: NextPageContext }
 
 const config = (_params: ConfigParams) => {
+  console.log('----url = ', url)
   return {
     url,
   };

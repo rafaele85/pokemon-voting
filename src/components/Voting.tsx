@@ -3,6 +3,7 @@ import {getOptionsForVote} from "../utils/getOptionsForVote";
 import {trpc} from "../utils/trpc";
 import {useEffect, useState} from "react";
 import {Loading} from "./Loading";
+import {PokemonComponent} from "./PokemonComponent";
 
 const resource = 'get-pokemon-by-id'
 
@@ -19,11 +20,11 @@ export const Voting = () => {
     const firstPokemon = trpc.useQuery([resource, {id: firstId}])
     const secondPokemon = trpc.useQuery([resource, {id: secondId}])
 
-    if (!ids) {
-        return <Loading />
+    const handleVote = (id: number) => {
+        console.log('-----handleVote', id)
     }
 
-    if (firstPokemon.isLoading || secondPokemon.isLoading) {
+    if (!ids || !firstPokemon?.data || !secondPokemon?.data || firstPokemon.isLoading || secondPokemon.isLoading) {
         return <Loading />
     }
 
@@ -31,18 +32,11 @@ export const Voting = () => {
         <Container>
             <Title>Voting</Title>
             <Compare>
-                <Member>
-                    <Sprite src={firstPokemon?.data?.sprites?.front_default || ''} />
-                    <Nickname>{firstPokemon?.data?.nickname}</Nickname>
-                </Member>
+                <PokemonComponent pokemon={firstPokemon?.data} onVote={handleVote} />
                 <Vs>
                     Vs
                 </Vs>
-                <Member>
-                    <Sprite src={secondPokemon?.data?.sprites?.front_default || ''} />
-                    <Nickname>{secondPokemon?.data?.nickname}</Nickname>
-                </Member>
-
+                <PokemonComponent pokemon={secondPokemon?.data} onVote={handleVote} />
             </Compare>
         </Container>
     )
@@ -63,17 +57,7 @@ const Compare = styled.div`
   border: 1px solid white;
   padding: 70px;
 `
-const Member = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: mistyrose;
-  color: black;
-  width: 160px;
-  height: 160px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-`
+
 const Vs = styled.div`
   display: flex;
   width: 160px;
@@ -81,11 +65,4 @@ const Vs = styled.div`
   align-items: center;
   justify-content: center;
 `
-const Sprite = styled.img`
-  width: 100%;
-`
 
-const Nickname = styled.div`
-  text-align: center;
-  font-weight: bold;
-`
