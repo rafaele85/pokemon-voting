@@ -23,7 +23,6 @@ const Home: NextPage = () => {
     return (
         <Container>
             <Head>
-                <title>Voting</title>
                 <meta name="description" content="Voting app" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
