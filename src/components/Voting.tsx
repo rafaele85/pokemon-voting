@@ -1,18 +1,44 @@
 import styled from "styled-components";
+import {getOptionsForVote} from "../utils/getOptionsForVote";
+import {trpc} from "../utils/trpc";
+import {useEffect, useState} from "react";
+import {Loading} from "./Loading";
+
+const resource = 'get-pokemon-by-id'
 
 export const Voting = () => {
+
+    const [ids, setIds] = useState<number[]>([0, 0])
+
+    useEffect(() => {
+        const _ids = getOptionsForVote()
+        setIds(_ids)
+    }, [])
+
+    const [firstId, secondId] = ids
+    const firstPokemon = trpc.useQuery([resource, {id: firstId}])
+    const secondPokemon = trpc.useQuery([resource, {id: secondId}])
+
+    if (!ids) {
+        return <Loading />
+    }
+
+    if (firstPokemon.isLoading || secondPokemon.isLoading) {
+        return <Loading />
+    }
+
     return (
         <Container>
             <Title>Voting</Title>
             <Compare>
                 <Member>
-                    member1
+                    <Sprite src={firstPokemon?.data?.sprites?.front_default || ''} />
                 </Member>
                 <Vs>
                     Vs
                 </Vs>
                 <Member>
-                    member2
+                    <Sprite src={secondPokemon?.data?.sprites?.front_default || ''} />
                 </Member>
 
             </Compare>
@@ -51,4 +77,6 @@ const Vs = styled.div`
   align-items: center;
   justify-content: center;
 `
-
+const Sprite = styled.img`
+  width: 100%;
+`

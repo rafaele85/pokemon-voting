@@ -2,24 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styled from "styled-components";
 import {Voting} from "../components/Voting";
-import {trpc} from "../utils/trpc";
-import {Loading} from "../components/Loading";
 
 const Home: NextPage = () => {
-    const { data, isLoading } = trpc.useQuery(['hello', {text: 'Theo'}])
-
-    if (isLoading) {
-        return <Loading />
-    }
-
-    if (data) {
-        return (
-            <div>
-                {data.greeting}
-            </div>
-        )
-    }
-
     return (
         <Container>
             <Head>
