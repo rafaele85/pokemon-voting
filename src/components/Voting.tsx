@@ -22,6 +22,7 @@ export const Voting = () => {
 
     const handleVote = (id: number) => {
         console.log('-----handleVote', id)
+        setIds(getOptionsForVote())
     }
 
     if (!ids || !firstPokemon?.data || !secondPokemon?.data || firstPokemon.isLoading || secondPokemon.isLoading) {

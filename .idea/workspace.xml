@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3249ef2f-6894-4213-99ba-6ca52afbaa5d" name="Changes" comment="send to client only specific data it needs">
-      <change afterPath="$PROJECT_DIR$/src/components/PokemonComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/pokemon.ts" afterDir="false" />
+    <list default="true" id="3249ef2f-6894-4213-99ba-6ca52afbaa5d" name="Changes" comment="refactor routing, prep to deploy to vercel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/router.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Voting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Voting.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +45,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657468973507</updated>
-      <workItem from="1657468974709" duration="15069000" />
+      <workItem from="1657468974709" duration="16353000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1657502159405</created>
@@ -79,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657523689329</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor routing, prep to deploy to vercel">
+      <created>1657536464597</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657536464597</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +103,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="added retrieval of pokemon by id and show pokemon image" />
     <MESSAGE value="send to client only specific data it needs" />
-    <option name="LAST_COMMIT_MESSAGE" value="send to client only specific data it needs" />
+    <MESSAGE value="refactor routing, prep to deploy to vercel" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor routing, prep to deploy to vercel" />
   </component>
 </project>
